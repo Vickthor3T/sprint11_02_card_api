@@ -36,18 +36,20 @@ places.forEach((place) => {
   //console.log(card);
   cardContainer.appendChild(card.generateCard()); //YO INDEX LAS AGREGO
 });*/
+const popupImage = new Popup("#popupImage");
 
 const section = new Section(
   places,
   (place) => {
-    const card = new Card(place, "#card-template");
+    const card = new Card(place, "#card-template", () => {
+      popupImage.open();
+    });
     return card.generateCard();
   },
   ".card-container"
 );
 
 section.renderItems();
-const popupImage = new Popup("#popupImage");
 
 const section2 = new Section(
   places,
