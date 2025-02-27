@@ -10,13 +10,18 @@
     <h1>Creacion de Tarjetas Dinamicas</h1>
     <header></header>
     <main>
+      <section class="buttons">
+        <button id="button1">PARA ABRIR EL POPUP A</button>
+        <button id="button2">PARA ABRIR EL POPUP B</button>
+        <button id="button3">PARA ABRIR EL POPUP C</button>
+      </section>
       <section class="card-container"></section>
-
       <section class="gold-card-container"></section>
     </main>
 
     <template id="card-template">
       <div class="card">
+        <!-- NO ESTAS SEGURO CUANTOS VAN A EXISTIR -->
         <h1 class="card__title">
           <p class="card_paragraph">Hola</p>
         </h1>
@@ -24,6 +29,117 @@
       </div>
     </template>
 
+    <!-- Popup base #1 (Formulario 1) popupFormA -->
+    <div class="popup popup_type_formA" id="popupFormA">
+      <div class="popup__content">
+        <button class="popup__close" type="button">X</button>
+        <h2 class="popup__title">Formulario A</h2>
+        <form class="popup__form formA" name="formA">
+          <input
+            type="text"
+            class="popup__input"
+            name="inputA1"
+            placeholder="Input A1"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputA2"
+            placeholder="Input A2"
+          />
+          <button type="submit" class="popup__submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup base #2 (Formulario B) popupFormB -->
+    <div class="popup popup_type_formB" id="popupFormB">
+      <div class="popup__content">
+        <button class="popup__close" type="button">X</button>
+        <h2 class="popup__title">Formulario B</h2>
+        <form class="popup__form formB" name="formB">
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB1"
+            placeholder="Input B1"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <button type="submit" class="popup__submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup #3 (Imagen ampliada) -->
+    <div class="popup popup_type_image" id="popupImage">
+      <div class="popup__content popup__content_type_image">
+        <button class="popup__close" type="button">X</button>
+        <img src="" alt="" class="popup__image" />
+        <p class="popup__caption"></p>
+      </div>
+    </div>
+
+    <div class="popup popup_type_formB" id="popupFormC">
+      <div class="popup__content">
+        <button class="popup__close" type="button">X</button>
+        <h2 class="popup__title">Formulario B</h2>
+        <form class="popup__form formB" name="formB">
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB1"
+            placeholder="Input B1"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <input
+            type="text"
+            class="popup__input"
+            name="inputB2"
+            placeholder="Input B2"
+          />
+          <button type="submit" class="popup__submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
     <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
+
+<!-- LOS TRES POPUPS COMPARTEN LA CLASE BASE CSS POPUP-->
+<!-- LOS TRES POPUPS DEBEN ABRIR Y CERRAR VENTANAS EMERGENTES-->
+<!-- DOS POPUPS TIENEN UNA FORMA(popup__form) MIENTRAS QUE UNA TIENE UNA IMAGEN(popup__image)-->

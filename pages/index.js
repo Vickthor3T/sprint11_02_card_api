@@ -1,5 +1,6 @@
 import Card from "../components/Card.js";
 import Section from "../components/Section.js";
+import Popup from "../components/Popup.js";
 const places = [
   {
     name: "Cancun",
@@ -46,14 +47,39 @@ const section = new Section(
 );
 
 section.renderItems();
+const popupImage = new Popup("#popupImage");
 
 const section2 = new Section(
   places,
   (place) => {
-    const card = new Card(place, "#card-template");
+    const card = new Card(place, "#card-template", () => {
+      popupImage.open();
+    });
     return card.generateCard();
   },
   ".card-container"
 );
 
 section2.renderItems();
+
+/********************************************************** */
+
+const button1 = document.querySelector("#button1");
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+
+const popupFormA = new Popup("#popupFormA");
+const popupFormB = new Popup("#popupFormB");
+const popupFormC = new Popup("#popupFormC");
+
+button1.addEventListener("click", () => {
+  popupFormA.open();
+});
+
+button2.addEventListener("click", () => {
+  popupFormB.open();
+});
+
+button3.addEventListener("click", () => {
+  popupFormC.open();
+});

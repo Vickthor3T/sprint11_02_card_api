@@ -1,9 +1,11 @@
 class Card {
-  constructor(data, templateSelector) {
+  constructor(data, templateSelector, handleImageClick) {
+    console.log(handleImageClick);
     this._title = data.name;
     this._image = data.link;
     this._templateSelector = templateSelector;
     this._element = ""; //que esta propiedad
+    this._handleImageClick = handleImageClick;
     //la vas a generar en los metodos
   }
   //this._templateSelector
@@ -35,6 +37,10 @@ class Card {
 
     titleElement.textContent = this._title;
     imageElement.src = this._image;
+
+    imageElement.addEventListener("click", () => {
+      this._handleImageClick();
+    });
 
     return this._element;
   }
